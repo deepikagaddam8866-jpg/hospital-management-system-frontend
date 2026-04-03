@@ -2,7 +2,8 @@ import axios from 'axios';
 
 // Basic wrapper for Axios configured with base URL and Request Interceptor for Token
 const instance = axios.create({
-  baseURL: 'http://localhost:8080/api', // Spring Boot endpoint
+    baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api',
+ // Spring Boot endpoint
 });
 
 instance.interceptors.request.use(
